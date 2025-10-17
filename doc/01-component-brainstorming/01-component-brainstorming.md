@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Deepen Chhetri
+- **Dot Number**: Chhetri.30
+- **Due Date**: 9/19 @ 4:10 pm
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -29,8 +27,6 @@ implement.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
-
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -52,8 +48,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<!-- TODO: read the assignment learning objectives then delete this comment -->
-
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -66,8 +60,6 @@ project. Specifically, students should be able to:
    discipline
 
 ## Assignment Rubric: 10 Points
-
-<!-- TODO: read the assignment rubric then delete this comment -->
 
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
@@ -106,7 +98,9 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
+I am interested in Network Management, Cybersecurity, and IT in general. I am CCNA certified and have completed network adminstration internships in the past, so this field is very interesting to me. In the future, my goal is to become a cybersecurity engineer or network adminstrator. I have worked in the transportation industry, so the blend of technology and transportation is also interesting to me. I worked at COTA, so it was interesting to see how applications like the Transit App helps operate the company. Futhermore, I was surprised to see how every bus had internet connectivity via a router, switch, and access point. Working in the transportaion industry has provided me with an insight into the field, so one of my goals is to explore how technology could further reform the industry. Besides technology, I also enjoy hanging out with friends, watching soccer games, and playing video games. My favorite soccer team is Liverpool and Barcelona currently. I enjoy playing Fortnite and FC 25/26.
+
+
 Also, protip: you can preview what your response looks like by hitting
 the magnifying glass icon in the upper-right corner or pressing CTRL+K and
 then V. This kind of button combination is called a chord, for whatever
@@ -114,15 +108,11 @@ reason -->
 
 ## Assignment
 
-<!-- TODO: read the assignment section then delete this comment -->
-
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -131,8 +121,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +188,84 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Binary Conversion
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component helps model a non-negative integer in binary form. The kernel provides simple operations in base 2 while the secondary methods are useful to convert to string and back to decimal. In networking, this would help as network IPs and subnet masks are represented in binary form.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void multiplyBy2(int bit): Multiplies this by 2 and adds bit binary. This requires bit to be 0 or 1.
+    - int divideBy2(): Divides this by 2 and returns the least significant bit
+    - boolean isZero(): checks if this equals 0
+    - void clear(): resets this to value of 0
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    - String toBinary(): Returns the binary representation of the integer in string
+  -  int toDecimal (int num): Helps to convert IP Addresses to dotted-decimial representations (their actual form)
+  - boolean equals(int decimal): compares current binary value with base-10 decimal number to see if they match
+  **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, because the kernel methods will change this. Also, all OSU components have to be mutable if they inherit from Standard. Clear() is an example.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - No, because this component relies on just manipulating numbers/digits.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, because we will be using constant RADIX = 2 to represent binary numbers.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since String toBinary() can be implemented by using divideBy2() to get the bits (remainders) and rebuild it using multiplyBy2(remainder).
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
+- Component Design #2: Portocol Numbers and Names
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component is created to model an Internet Protocol Number, which helps identify the portocol associated in the IP packet. Examples of this include TCP, UDP, HTTP. This component will help associate the numbers with the correct name of the protocol.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void multiplyBy10(int n): Multiplies this by 10 and adds digit n
+    - int divideBy10(): Divides this by 10 and returns the right digit (remainder).
+    - boolean isZero(): Checks if the protocol number is 0
+    -void clear(): resets this to 0
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - String name(): returns the name of the protocol including "unknown"
+    - String toString(): helps convert protocol number to strng
+    - boolean match(String protocolNum): checks if two protocol numbers are the same
+    - boolean checkTransportLayer4(): Checks if the protocol is a UDP/TCP protocol
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since the number (this) can be modified using methods like clear() and multiplyBy10().
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I could take a different approach for this, but I am planning on using Map to make it easier to match the protocol numbers with their names like UDP, DNS, etc.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes, since we can store common protocols like TCP and UDP as constants.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - For some things like matching protocol numbers we could implement it using divideBy10() constantly and comparing the digits.
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
+- Component Design #3: Same Network Verification
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
+    - This component helps check if two IP addresses belong to the same network. This is helpful for routing, subnetting, access control lists, etc in networking. The kernel methods hlep store the IP in digit form while secondary methods convert and checks the network.
   - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
+    - void set(String ip, String subnetMask): Pairs the ip and subnet mask in string format
+    - void multiplyBy10(int n): Multiplies this by 10 and adds digit
+    - int divideBy10(): Divides this by 10 and returns the remainder
+    - boolean isZero(): checks if the network does not exist
+    - void clear(): resets this network to empty or 0
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - boolean isSameNetwork (String IP, String subnetMask): Checks to see if two IP Addresses are part of the same network
+  - String toString (): Helps to convert IP  Addresses to dotted-decimial representations (their actual form)
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. Kernel methods like clear modify the IP and subnet mask by resetting this to 0.
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I might use Map to match each IP with the correct subnet mask, so it easier to compare two IP addresses.
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - I may use constants like maxOctet = 255 to show that the max number in the octet is 255.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Yes. For example, toString() could be rebuild by calling divideBy10() and getting the digits consantly and then rebuilding it using multiplyBy10().
 
 ## Post-Assignment
 
@@ -270,7 +274,7 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: create CHANGELOG then delete this comment -->
+Concept Brainstorming: 9/21/2025
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -292,12 +296,12 @@ the following form: YYYY.0M.0D.
 
 ### Added
 
-- Designed a <!-- insert name of component 1 here --> component
-- Designed a <!-- insert name of component 2 here --> component
-- Designed a <!-- insert name of component 3 here --> component
+- Designed a Binary Conversion component
+- Designed a Portocol Numbers and Names component
+- Designed a Same Network Verification component
 ```
 
-Here `YYYY.MM.DD` would be the date of your submission, such as 2024.04.21.
+Here `2025.09.21` would be the date of your submission, such as 2024.04.21.
 
 You may notice that things are nicely linked in the root CHANGELOG. If you'd
 like to accomplish that, you will need to make GitHub releases after each pull
@@ -309,8 +313,6 @@ of development.
 
 ### Submission
 
-<!-- TODO: read the submission instructions then delete this comment -->
-
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
 this [Markdown to PDF guide][markdown-to-pdf-guide]. However, PDFs should be
@@ -319,11 +321,7 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
-
 ### Peer Review
-
-<!-- TODO: review the peer review guidelines then delete this comment -->
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -349,8 +347,6 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
