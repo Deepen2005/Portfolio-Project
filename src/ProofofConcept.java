@@ -7,7 +7,9 @@ import java.util.Scanner;
  *
  *         Description: Displays a working project, where base 10 numbers get
  *         converted to binary. The user can enter a base 10 integer, and the
- *         program converts it into its binary representation.
+ *         program converts it into its binary representation. This is intended
+ *         Network Adminstrators who need to use subnetting and Anding which
+ *         require binary numbers. Thus, this will be useful.
  */
 public final class ProofofConcept {
 
